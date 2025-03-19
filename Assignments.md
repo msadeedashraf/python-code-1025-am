@@ -13,5 +13,8 @@ P7. Convert the day05/functions.py using lambda expression
 P8. Refactor the day06/sort.py by using a loop to take the input from the user. Also announce the grade based on their average score (90% or more A, 85% or more B+, 80% or more B,.....). 
 P9. Create a 4 function calculator using inheritance
 
-Sort files based on their extension type. [to begin with you can use txt, doc, ppt, jpg...] 
-Sort files based on their extension type. [to begin with you can use txt, doc, ppt, jpg...] and move them into appropriate folders [month and year] based on their creation date.
+Extra Challenges: 
+C1. Sort files based on their extension type. [to begin with you can use txt, doc, ppt, jpg...] 
+C2. Sort files based on their extension type. [to begin with you can use txt, doc, ppt, jpg...] and move them into appropriate folders [month and year] based on their creation date.
+
+
