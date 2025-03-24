@@ -30,10 +30,10 @@ class SavingsAccount(BankAccount):
 
     def deposit(self, amount):
         if amount > 0:
-            self.balance += amount
+            self._balance += amount
             current_date_time = datetime.now()
             return print(
-                f"{current_date_time} **** Deposited ${_amount:.2f}. New balance: ${self._balance:.2f}"
+                f"{current_date_time} **** Deposited ${amount:.2f}. New balance: ${self._balance:.2f}"
             )
         return print("Deposit amount must be positive.")
 
@@ -48,6 +48,6 @@ class SavingsAccount(BankAccount):
 
 
 account = SavingsAccount("1234566A", "CJ", 100)
-# account.deposit(200)
+account.deposit(200)
 account.withdraw(50)
 print(account.get_balance())
