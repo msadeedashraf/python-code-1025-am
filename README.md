@@ -23,3 +23,6 @@ Pylance
 >
 > > > quit()
 > > > test
+
+### Flask
+[link](https://flask.palletsprojects.com/en/stable/)

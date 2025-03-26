@@ -50,4 +50,5 @@ class SavingsAccount(BankAccount):
 account = SavingsAccount("1234566A", "CJ", 100)
 account.deposit(200)
 account.withdraw(50)
-print(account.get_balance())
+account.get_balance()
+# print()
