@@ -26,3 +26,12 @@ Pylance
 
 ### Flask
 [link](https://flask.palletsprojects.com/en/stable/)
+
+
+### Exception Handling 
+[exceptions](https://docs.python.org/3/tutorial/errors.html#exception-chaining)
+[exceptions](https://www.geeksforgeeks.org/built-exceptions-python/)
+
+
+### PIP Packages
+>pip install requests
