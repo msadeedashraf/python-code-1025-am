@@ -52,3 +52,11 @@ On Windows (Command Prompt):
 
 On Windows (PowerShell):
 >myenv\Scripts\Activate.ps1
+
+Step 4: Install Dependencies (Optional)
+
+After activation, install necessary packages using:
+>pip install package_name
+
+You can also install multiple packages from a requirements.txt file:
+>pip install -r requirements.txt
