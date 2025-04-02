@@ -35,3 +35,20 @@ Pylance
 
 ### PIP Packages
 >pip install requests
+>python -m pip install pymongo
+
+### How to activate the virtual environment 
+
+Step 1: Install venv (if not installed)
+>pip install virtualenv
+
+Step 2: Create a Virtual Environment
+>python -m venv myenv
+
+Step 3: Activate the Virtual Environment
+
+On Windows (Command Prompt):
+>myenv\Scripts\activate 
+
+On Windows (PowerShell):
+>myenv\Scripts\Activate.ps1
