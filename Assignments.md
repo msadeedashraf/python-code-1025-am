@@ -21,6 +21,7 @@ P14. Find the factorial of any number/input.
 P15. Create a file and move the content from that file into another file on a different location.
 P16. Append an existing file and verify the content in it.
 P17. Delete all the file starting with a specific character or ends with a particular extension (txt, doc, etc).
+P18. Insert monkey json data from a url into the mongodb.
 
 
 Extra Challenges: 
