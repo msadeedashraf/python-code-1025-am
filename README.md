@@ -33,6 +33,9 @@ Pylance
 [exceptions](https://www.geeksforgeeks.org/built-exceptions-python/)
 
 
+### Convert JSON to a TABLE
+[JSON2TABLE](https://jsontotable.org/)
+
 ### PIP Packages
 >pip install requests
 >python -m pip install pymongo

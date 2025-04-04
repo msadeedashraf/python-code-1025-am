@@ -11,7 +11,7 @@ try:
         myData = response.json()
         # print(json.dumps(myData, indent=4))
         try:
-            f2 = open("../files/monkey.json", "a")
+            f2 = open("../../files/monkey.json", "a")
             f2.write(json.dumps(myData, indent=4))
         except (
             FileNotFoundError,
