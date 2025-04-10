@@ -40,6 +40,10 @@ Pylance
 >pip install requests
 >python -m pip install pymongo
 
+https://flask-sqlalchemy.readthedocs.io/en/stable/config/
+
+>pip install sqlalchemy
+
 ### How to activate the virtual environment 
 
 Step 1: Install venv (if not installed)

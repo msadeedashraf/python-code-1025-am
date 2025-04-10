@@ -11,7 +11,15 @@ body
  color: #333;
 
 }
+.job-list
+{
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #edebed;
 
+}
 header
 {
     background-color: #333;

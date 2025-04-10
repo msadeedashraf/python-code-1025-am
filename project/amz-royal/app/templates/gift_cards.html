@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gift Cards - AMZ Royal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>AMZ Royal</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/gift-cards">Gift Card</a>
+            <a href="#">Product Search</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Available Gift Cards</h2>
+        <div class="product-container">
+            {% for card in gift_cards %}
+            <div class="product-card">
+                <img src="{{ url_for('static', filename=card.image) }}" alt="{{ card.name }}">
+                <h3>{{ card.name }}</h3>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AMZ Royal. Terms and conditions apply.</p>
+    </footer>
+</body>
+</html>
