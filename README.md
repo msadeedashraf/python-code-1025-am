@@ -45,6 +45,9 @@ Pylance
 ### ![](/Assets/flask-sqlalchemy-title.webp)
 https://flask-sqlalchemy.readthedocs.io/en/stable/config/
 
+##### Flask SQLAlchemy Quick Start
+https://flask-sqlalchemy.readthedocs.io/en/stable/quickstart/
+
 ### SQLite Browser
 https://sqlitebrowser.org/dl/
 
