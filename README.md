@@ -39,10 +39,14 @@ Pylance
 ### PIP Packages
 >pip install requests
 >python -m pip install pymongo
+>pip install sqlalchemy
 
+
+### ![](/Assets/flask-sqlalchemy-title.webp)
 https://flask-sqlalchemy.readthedocs.io/en/stable/config/
 
->pip install sqlalchemy
+### SQLite Browser
+https://sqlitebrowser.org/dl/
 
 ### How to activate the virtual environment 
 
