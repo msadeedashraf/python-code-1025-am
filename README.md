@@ -40,6 +40,7 @@ Pylance
 >pip install requests
 >python -m pip install pymongo
 >pip install sqlalchemy
+>pip install -U Flask-SQLAlchemy
 
 
 ### ![](/Assets/flask-sqlalchemy-title.webp)

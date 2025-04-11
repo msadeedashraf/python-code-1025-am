@@ -1,0 +1,35 @@
+{% extends 'sharedhtml.html' %}
+{% block title %} Update To-Do List{% endblock title %}
+
+{% block body %}
+
+<h1>Update My To-Do List</h1>
+
+<div class="container">
+
+  <form action="/update/{{mytodo.taskid}}" method="POST">
+      <div class="mb-3">
+        <label for="task" class="form-label">Task</label>
+        <input type="text" class="form-control" name="task" value="{{mytodo.task}}" id="task" aria-describedby="emailHelp">
+       
+      </div>
+      <div class="mb-3">
+        <label for="desc" class="form-label">Description</label>
+        <input type="text" class="form-control" value="{{mytodo.desc}}" name="desc" id="desc">
+      </div>
+     
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+
+</div>
+
+    
+{% endblock body %}
+
+
+      
+
+     
+   
+
+     

@@ -1,0 +1,73 @@
+{% extends 'sharedhtml.html' %}
+{% block title %} To-Do List{% endblock title %}
+{% block body %}
+<h1>My To-Do List</h1>
+
+<div class="container">
+
+  <form action="/" method="POST">
+      <div class="mb-3">
+        <label for="task" class="form-label">Task</label>
+        <input type="text" class="form-control" name="task" id="task" aria-describedby="emailHelp">
+       
+      </div>
+      <div class="mb-3">
+        <label for="desc" class="form-label">Description</label>
+        <input type="text" class="form-control" name="desc" id="desc">
+      </div>
+     
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+
+</div>
+
+{% if myalltodolist|length == 0  %}
+<div class="container">
+  <br>
+
+  <div class="alert alert-danger" role="alert">
+    No Task Found in the DB. Enter New Task.
+  </div>
+    
+</div>   
+
+{% else %}
+  
+<div class="container">
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">TaskId</th>
+          <th scope="col">Task</th>
+          <th scope="col">Description</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+
+          {% for e in myalltodolist %}
+              
+          <tr>
+            <th scope="row">{{loop.index}}</th>
+            <td>{{e.task}}</td>
+            <td>{{e.desc}}</td>
+            <td>{{e.creation_date}}</td>
+            <td>
+              <a href="/update/{{e.taskid}}" type="button" class="btn btn-outline-dark btn-sm mx-2 ">Update</a>
+              <a href="/delete/{{e.taskid}}" type="button" class="btn btn-outline-dark  btn-sm mx-2 ">Delete</a>
+            </td>
+          </tr>
+          {% endfor %}
+       
+      </tbody>
+    </table>
+</div>
+{% endif %}
+
+
+
+
+ 
+
+{% endblock body %}
+
