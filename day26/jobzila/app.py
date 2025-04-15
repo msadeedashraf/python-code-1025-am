@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -31,6 +31,36 @@ def defaultPage():
     # return "<p>Hello, World!</p>"
 
 
+"""
+@app.route("/addjob")
+def addjobs():
+    return render_template("job_new.html")
+"""
+
+
+"""
+@app.route("/addjob", methods=["GET", "POST"])
+def addjobs():
+    if request.method == "POST":
+        myjobtitle = request.form[jobtitle]
+        mylocation = request.form[location]
+        mycompany = request.form[company]
+        myjobdesc = request.form[jobdesc]
+        job = JobList(
+            title=myjobtitle,
+            company=mycompany,
+            location=mylocation,
+            description=myjobtitle,
+            applyLink="https://example.com/apply",
+        )
+        db.session.add(job)
+        db.session.commit()
+
+    return render_template("joblistingtest.html")
+    # return "<p>Hello, World!</p>"
+"""
+
+
 @app.route("/index")
 def index():
     return render_template("index.html")
@@ -55,15 +85,41 @@ def joblisting():
     db.session.add(job)
     db.session.commit()
     """
+    myalljobslist = JobList.query.all()
+    # print(myalljobslist)
+    return render_template("joblistingtest.html", myalljobslist=myalljobslist)
 
-    return render_template("joblisting.html")
 
-
+"""
 @app.route("/testjobs", methods=["GET"])
 def getjobs():
     myalljobslist = JobList.query.all()
     print(myalljobslist)
     return render_template("joblistingtest.html", myalljobslist=myalljobslist)
+"""
+
+
+@app.route("/addjobs", methods=["GET", "POST"])
+def addjobs():
+
+    if request.method == "POST":
+        myjobtitle = request.form["jobtitle"]
+        mylocation = request.form["location"]
+        mycompany = request.form["company"]
+        myjobdesc = request.form["jobdesc"]
+        job = JobList(
+            title=myjobtitle,
+            company=mycompany,
+            location=mylocation,
+            description=myjobdesc,
+            applyLink="https://example.com/apply",
+        )
+        db.session.add(job)
+        db.session.commit()
+        # myalljobslist = JobList.query.all()
+        return redirect("/joblisting")
+
+    return render_template("job_new.html")
 
 
 @app.route("/terms")
