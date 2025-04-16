@@ -23,6 +23,13 @@
             <p>{{j.location}}</p>
             <p>{{j.description}}</p>
                 <p class="learn-more"><a href="">Learn More</a></p>
+                <p class="update-delete-btn">
+                  <a href="/update/{{j.jobid}}" type="button">Update</a>
+                  
+                  <a href="/delete/{{j.jobid}}" type="button">Delete</a>
+
+                  
+                </p>
         </div>
           
           {% endfor %}

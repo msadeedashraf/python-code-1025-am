@@ -31,36 +31,6 @@ def defaultPage():
     # return "<p>Hello, World!</p>"
 
 
-"""
-@app.route("/addjob")
-def addjobs():
-    return render_template("job_new.html")
-"""
-
-
-"""
-@app.route("/addjob", methods=["GET", "POST"])
-def addjobs():
-    if request.method == "POST":
-        myjobtitle = request.form[jobtitle]
-        mylocation = request.form[location]
-        mycompany = request.form[company]
-        myjobdesc = request.form[jobdesc]
-        job = JobList(
-            title=myjobtitle,
-            company=mycompany,
-            location=mylocation,
-            description=myjobtitle,
-            applyLink="https://example.com/apply",
-        )
-        db.session.add(job)
-        db.session.commit()
-
-    return render_template("joblistingtest.html")
-    # return "<p>Hello, World!</p>"
-"""
-
-
 @app.route("/index")
 def index():
     return render_template("index.html")
@@ -90,15 +60,6 @@ def joblisting():
     return render_template("joblistingtest.html", myalljobslist=myalljobslist)
 
 
-"""
-@app.route("/testjobs", methods=["GET"])
-def getjobs():
-    myalljobslist = JobList.query.all()
-    print(myalljobslist)
-    return render_template("joblistingtest.html", myalljobslist=myalljobslist)
-"""
-
-
 @app.route("/addjobs", methods=["GET", "POST"])
 def addjobs():
 
@@ -116,10 +77,41 @@ def addjobs():
         )
         db.session.add(job)
         db.session.commit()
-        # myalljobslist = JobList.query.all()
+
         return redirect("/joblisting")
 
     return render_template("job_new.html")
+
+
+@app.route("/delete/<int:jobid>")
+def delete(jobid):
+    myjob = JobList.query.filter_by(jobid=jobid).first()
+    db.session.delete(myjob)
+    db.session.commit()
+
+    return redirect("/joblisting")
+
+
+@app.route("/update/<int:jobid>", methods=["GET", "POST"])
+def update(jobid):
+    if request.method == "POST":
+        myjobtitle = request.form["jobtitle"]
+        mylocation = request.form["location"]
+        mycompany = request.form["company"]
+        myjobdesc = request.form["jobdesc"]
+
+        myjob = JobList.query.filter_by(jobid=jobid).first()
+        myjob.title = myjobtitle
+        myjob.location = mylocation
+        myjob.company = mycompany
+        myjob.description = myjobdesc
+
+        db.session.add(myjob)
+        db.session.commit()
+        return redirect("/joblisting")
+
+    myjob = JobList.query.filter_by(jobid=jobid).first()
+    return render_template("updatejob.html", myjob=myjob)
 
 
 @app.route("/terms")
