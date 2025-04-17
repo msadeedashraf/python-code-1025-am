@@ -1,14 +1,22 @@
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import os
 
 app = Flask(__name__)
 
 
-# configure the SQLite database
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///jobs.db"
-# app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+# Install ODBC Driver on the local machine
+# https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver16#download-for-windows
+# Install the ODBC package in the myenv
+# pip install sqlalchemy pyodbc
 
+app.config["SQLALCHEMY_DATABASE_URI"] = (
+    "mssql+pyodbc://sadeedadmin:Pa55w.rd1234@sadeed-sql-server.database.windows.net:1433/jobzila"
+    "?driver=ODBC+Driver+18+for+SQL+Server&encrypt=yes&trustServerCertificate=no"
+)
+
+# app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("AZURE_DB_URL")
 
 db = SQLAlchemy(app)
 
